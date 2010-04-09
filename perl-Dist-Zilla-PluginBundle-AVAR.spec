@@ -1,5 +1,5 @@
 %define upstream_name    Dist-Zilla-PluginBundle-AVAR
-%define upstream_version 0.13
+%define upstream_version 0.15
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -14,8 +14,8 @@ Source0:    http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstre
 BuildRequires: perl(Dist::Zilla)
 BuildRequires: perl(Dist::Zilla::Plugin::AutoPrereq)
 BuildRequires: perl(Dist::Zilla::Plugin::CompileTests)
+BuildRequires: perl(Dist::Zilla::Plugin::MakeMaker::Awesome)
 BuildRequires: perl(Dist::Zilla::Plugin::MetaNoIndex)
-BuildRequires: perl(Dist::Zilla::Plugin::OverridableMakeMaker)
 BuildRequires: perl(Dist::Zilla::Plugin::ReadmeFromPod)
 BuildRequires: perl(Dist::Zilla::Plugin::VersionFromPrev)
 BuildRequires: perl(Dist::Zilla::PluginBundle::Filter)
@@ -23,27 +23,18 @@ BuildRequires: perl(Dist::Zilla::PluginBundle::Git)
 BuildRequires: perl(Dist::Zilla::Role::PluginBundle)
 BuildRequires: perl(Moose)
 BuildRequires: perl(Moose::Autobox)
+
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
-This is the plugin bundle that AVAR uses. Use it as:
-
-    [@AVAR]
-    ;; same as `name' earlier in the dist.ini, repeated due to
-    ;; limitations of the Dist::Zilla plugin interface
-    dist = MyDist
-    ;; If you're not avar
-    github_user = imposter
-
-It's equivalent to:
+This is the plugin bundle that AVAR uses.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-
 %make
 
 %check
@@ -61,5 +52,3 @@ rm -rf %buildroot
 %doc Changes META.yml LICENSE README META.json
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
