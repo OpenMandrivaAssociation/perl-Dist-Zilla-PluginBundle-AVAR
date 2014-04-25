@@ -1,2 +1,4 @@
+removed_sources:
+  Dist-Zilla-PluginBundle-AVAR-0.16.tar.gz: 7839be6169edc97d71a1b8f186f7bff0fb619e6a
 sources:
-  "Dist-Zilla-PluginBundle-AVAR-0.16.tar.gz": 7839be6169edc97d71a1b8f186f7bff0fb619e6a
+  Dist-Zilla-PluginBundle-AVAR-0.30.tar.gz: 6d85f04d18bd999a3e1e7954cef9941e5f58d77f
