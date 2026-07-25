@@ -1,15 +1,15 @@
 %define upstream_name    Dist-Zilla-PluginBundle-AVAR
-%define upstream_version 0.16
+%define upstream_version 0.35
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Use L<Dist::Zilla> like AVAR does
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/avar/dist-zilla-pluginbundle-avar
+Source0:	https://cpan.metacpan.org/authors/id/R/RK/RKITOVER/Dist-Zilla-PluginBundle-AVAR-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
